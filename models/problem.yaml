@@ -1,0 +1,35 @@
+Error:
+  type: object
+  required:
+    - type
+    - title
+    - status
+  properties:
+    type:
+      type: string
+      format: uri
+      description: URI that identifies the problem type.
+      default: 'about:blank'
+      example: 'https://developer.danfoss.com/error-code-reference#token-or-client-authentication-credentials-missing'
+    title:
+      type: string
+      description: A short, human-readable summary of the problem type
+      default: Error
+      example: Bad request
+    status:
+      type: integer
+      format: int32
+      minimum: 100
+      maximum: 600
+      exclusiveMinimum: true
+      exclusiveMaximum: true
+      example: 400
+    detail:
+      type: string
+      default: Error
+      description: Detailed explanation specific to this occurrence of the problem. Can be json string.
+      example: Error response from target.
+    message_id:
+        type: string
+        description: Unique error message id.
+        example: rrt-7125511224420475346-b-geu1-6562-8730625-1
